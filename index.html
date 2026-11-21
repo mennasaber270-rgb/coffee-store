@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coffee Store | متجر القهوة المختصة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">Coffee Store</a>
+    <nav id="menu" class="menu" aria-label="القائمة الرئيسية">
+      <a href="#shop">المنتجات</a>
+      <a href="#why">لماذا Coffee Store</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" id="openCart" aria-label="فتح السلة">السلة <span id="cartCount">0</span></button>
+      <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <h1>قهوتك تبدأ من الحبّة، لا من الكوب.</h1>
+        <p>حبوب محمّصة طازجة وأدوات تحضير مختارة بعناية، تصل إلى بابك خلال يومين.</p>
+        <a class="btn" href="#shop">تسوّق الآن</a>
+      </div>
+      <div class="hero-card">
+        <img class="hero-img" src="images/hero.jpg" alt="كوب لاتيه محاط بحبوب القهوة">
+        <div class="tag">تحميص اليوم<br><strong>إثيوبيا – يرغاتشيف</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap shop" id="shop">
+    <div class="shop-head">
+      <h2>المنتجات</h2>
+      <div class="tools">
+        <input type="search" id="search" placeholder="ابحث عن منتج…" aria-label="بحث">
+        <select id="sort" aria-label="ترتيب">
+          <option value="def">الترتيب الافتراضي</option>
+          <option value="low">السعر: الأقل أولاً</option>
+          <option value="high">السعر: الأعلى أولاً</option>
+        </select>
+      </div>
+    </div>
+    <div class="chips" id="chips" role="tablist"></div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>لا توجد منتجات مطابقة. جرّب كلمة بحث أخرى أو قسمًا مختلفًا.</p>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap why-in">
+      <div><h3>تحميص أسبوعي</h3><p>نحمّص كل دفعة قبل الشحن بأيام قليلة فقط.</p></div>
+      <div><h3>شحن خلال يومين</h3><p>توصيل لجميع المحافظات والدفع عند الاستلام.</p></div>
+      <div><h3>استرجاع خلال 14 يومًا</h3><p>لم تعجبك الأداة؟ نستبدلها أو نردّ لك المبلغ.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="wrap foot-in">
+    <div><div class="logo light">Coffee Store</div><p>متجر قهوة مختصة، القاهرة.</p></div>
+    <div><h4>الأقسام</h4><a href="#shop">حبوب القهوة</a><a href="#shop">أدوات التحضير</a><a href="#shop">الأكواب</a></div>
+    <div><h4>تواصل معنا</h4><span>hello@coffeestore.example</span><span>0100 000 0000</span></div>
+    <form class="news" id="news"><h4>نشرة العروض</h4>
+      <div><input type="email" required placeholder="بريدك الإلكتروني" aria-label="البريد الإلكتروني"><button class="btn sm">اشترك</button></div>
+      <small id="newsMsg" role="status"></small>
+    </form>
+  </div>
+  <div class="copy">© 2026 Coffee Store. جميع الحقوق محفوظة.</div>
+</footer>
+
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-label="سلة التسوق" aria-hidden="true">
+  <div class="drawer-head"><h3>سلة التسوق</h3><button id="closeCart" aria-label="إغلاق">✕</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="drawer-foot"><div class="total"><span>الإجمالي</span><strong id="total">0 ج.م</strong></div>
+  <button class="btn block" id="checkout">إتمام الشراء</button></div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" hidden>
+  <div class="modal-box" id="modalBox"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
